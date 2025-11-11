@@ -1,0 +1,120 @@
+version: '3.8'
+
+services:
+  # PostgreSQL Database
+  postgres:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_DB: playground
+      POSTGRES_USER: playground
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-playground}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    # NO ports - internal only
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U playground"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - playground-network
+
+  # Redis for RQ
+  redis:
+    image: redis:7-alpine
+    # NO ports - internal only
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      - playground-network
+
+  # Backend API
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    # NO ports - Traefik handles routing
+    environment:
+      DATABASE_URL: postgresql://playground:${POSTGRES_PASSWORD:-playground}@postgres:5432/playground
+      REDIS_URL: redis://redis:6379/0
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - ./backend:/app/backend:ro
+    command: uvicorn backend.app:app --host 0.0.0.0 --port 8000
+    networks:
+      - playground-network
+    labels:
+      # Traefik labels for Easypanel
+      - "traefik.enable=true"
+      - "traefik.http.routers.backend.rule=Host(`${BACKEND_DOMAIN:-api.localhost}`)"
+      - "traefik.http.routers.backend.entrypoints=websecure"
+      - "traefik.http.routers.backend.tls.certresolver=letsencrypt"
+      - "traefik.http.services.backend.loadbalancer.server.port=8000"
+      # CORS headers
+      - "traefik.http.middlewares.backend-cors.headers.accesscontrolallowmethods=GET,POST,PUT,DELETE,OPTIONS"
+      - "traefik.http.middlewares.backend-cors.headers.accesscontrolalloworigin=*"
+      - "traefik.http.middlewares.backend-cors.headers.accesscontrolallowheaders=*"
+      - "traefik.http.routers.backend.middlewares=backend-cors"
+
+  # RQ Worker
+  worker:
+    build:
+      context: .
+      dockerfile: worker/Dockerfile
+    environment:
+      DATABASE_URL: postgresql://playground:${POSTGRES_PASSWORD:-playground}@postgres:5432/playground
+      REDIS_URL: redis://redis:6379/0
+      RUNNER_IMAGE: py-playground-runner:latest
+      WORKSPACE_DIR: /workspaces
+      HOST_WORKSPACE_DIR: /workspaces
+      PYTHONPATH: /app
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./backend:/app/backend:ro
+      - ./worker:/app/worker:ro
+      - workspaces:/workspaces
+    command: python -m rq.cli worker --url redis://redis:6379/0 submissions
+    networks:
+      - playground-network
+
+  # Frontend
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    # NO ports - Traefik handles routing
+    environment:
+      VITE_API_URL: https://${BACKEND_DOMAIN:-api.localhost}
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/src:/app/src
+    networks:
+      - playground-network
+    labels:
+      # Traefik labels for Easypanel
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`${FRONTEND_DOMAIN:-localhost}`)"
+      - "traefik.http.routers.frontend.entrypoints=websecure"
+      - "traefik.http.routers.frontend.tls.certresolver=letsencrypt"
+      - "traefik.http.services.frontend.loadbalancer.server.port=5173"
+
+volumes:
+  postgres_data:
+  workspaces:
+
+networks:
+  playground-network:
+    driver: bridge

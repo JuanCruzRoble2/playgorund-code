@@ -1,0 +1,39 @@
+# 🚀 Comandos para Commit y Push
+
+## Archivos nuevos creados:
+1. docker-compose.easypanel.yml  - Docker Compose optimizado para Easypanel (sin puertos)
+2. .env.easypanel                - Variables de entorno para Easypanel
+3. EASYPANEL_QUICKSTART.md       - Guía rápida de deploy
+4. DEPLOY_EASYPANEL.md           - Guía completa (ya existía)
+
+## Comandos a ejecutar:
+
+# 1. Ver status de archivos
+git status
+
+# 2. Agregar archivos nuevos
+git add docker-compose.easypanel.yml
+git add .env.easypanel
+git add EASYPANEL_QUICKSTART.md
+git add DEPLOY_EASYPANEL.md
+git add DEPLOY_RAILWAY.md
+git add DEPLOY_DIGITAL_OCEAN.md
+
+# 3. Commit con mensaje descriptivo
+git commit -m "Add Easypanel deployment configuration
+
+- Add docker-compose.easypanel.yml (no exposed ports, Traefik labels)
+- Fix 'PWD variable not set' warning
+- Add Traefik routing labels for automatic SSL
+- Add deployment guides for Railway, Digital Ocean, and Easypanel
+- Configure environment variables for Easypanel"
+
+# 4. Push al repositorio
+git push origin main
+
+## Después del push:
+
+1. Ir a Easypanel
+2. Refrescar la página
+3. Seleccionar archivo: docker-compose.easypanel.yml
+4. Deploy

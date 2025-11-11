@@ -201,6 +201,11 @@ def pytest_sessionfinish(session, exitstatus):
             duration = docker_result.duration
             timed_out = docker_result.timed_out
 
+            # Debug: print pytest output
+            print(f"[WORKER DEBUG] Pytest stdout: {stdout}")
+            print(f"[WORKER DEBUG] Pytest stderr: {stderr}")
+            print(f"[WORKER DEBUG] Return code: {returncode}")
+
             # Leer report.json generado por conftest
             report_path = workspace_path / "report.json"
             test_details = []

@@ -119,17 +119,33 @@ def run_submission_in_sandbox(submission_id: int, problem_id: str, code: str,
             # Copiar tests públicos y ocultos usando helper function
             tests_public = problem_dir / "tests_public.py"
             tests_hidden = problem_dir / "tests_hidden.py"
+            tests_copied = False
 
             # Si no existen tests_public/hidden, buscar tests.py legacy
             if not tests_public.exists() and not tests_hidden.exists():
                 tests_legacy = problem_dir / "tests.py"
                 if tests_legacy.exists():
                     _copy_test_file(tests_legacy, workspace_path / "tests_public.py", "legacy")
+                    tests_copied = True
+                else:
+                    logger.error(
+                        "No test files found in problem directory",
+                        extra={
+                            "problem_id": problem_id,
+                            "problem_dir": str(problem_dir),
+                            "files": [f.name for f in problem_dir.iterdir()]
+                        }
+                    )
             else:
                 if tests_public.exists():
                     _copy_test_file(tests_public, workspace_path / "tests_public.py", "public")
+                    tests_copied = True
                 if tests_hidden.exists():
                     _copy_test_file(tests_hidden, workspace_path / "tests_hidden.py", "hidden")
+                    tests_copied = True
+
+            if not tests_copied:
+                raise Exception(f"No test files found for problem {problem_id} in {problem_dir}")
 
             # Copiar conftest.py para generar report.json
             conftest_content = '''"""

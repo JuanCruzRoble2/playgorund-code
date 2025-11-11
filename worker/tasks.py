@@ -178,6 +178,7 @@ def pytest_sessionfinish(session, exitstatus):
 
             # Log workspace contents before execution
             workspace_files = [f.name for f in workspace_path.iterdir()]
+            print(f"[WORKER DEBUG] Workspace files: {workspace_files}")  # Print to stdout for RQ logs
             logger.info(
                 "Workspace prepared for execution",
                 extra={

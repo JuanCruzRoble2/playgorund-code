@@ -127,7 +127,7 @@ class DockerRunner:
             "-v", f"{host_workspace}:/workspace:rw",
             "-w", "/workspace",
             self.runner_image,
-            "pytest", "-q", "--tb=short", "-o", "cache_dir=/tmp/pytest_cache", "."
+            "pytest", "-vv", "--tb=short", "-o", "cache_dir=/tmp/pytest_cache", "."
         ]
 
 

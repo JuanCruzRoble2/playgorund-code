@@ -29,6 +29,16 @@ services:
     networks:
       - playground-network
 
+  # Build runner image for code execution sandbox
+  runner:
+    build:
+      context: ./runner
+      dockerfile: Dockerfile
+    image: py-playground-runner:latest
+    command: "true"
+    networks:
+      - playground-network
+
   # Backend API
   backend:
     build:
@@ -79,6 +89,8 @@ services:
         condition: service_healthy
       redis:
         condition: service_healthy
+      runner:
+        condition: service_completed_successfully
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - ./backend:/app/backend:ro

@@ -176,6 +176,17 @@ def pytest_sessionfinish(session, exitstatus):
             (workspace_path / "conftest.py").write_text(conftest_content, encoding="utf-8")
             os.chmod(workspace_path / "conftest.py", 0o666)
 
+            # Log workspace contents before execution
+            workspace_files = [f.name for f in workspace_path.iterdir()]
+            logger.info(
+                "Workspace prepared for execution",
+                extra={
+                    "workspace": str(workspace_path),
+                    "files": workspace_files,
+                    "problem_id": problem_id
+                }
+            )
+
             # Ejecutar tests en Docker usando DockerRunner service
             docker_result = docker_runner.run(
                 workspace=workspace,

@@ -73,6 +73,7 @@ services:
       WORKSPACE_DIR: /workspaces
       HOST_WORKSPACE_DIR: /workspaces
       PYTHONPATH: /app
+      DOCKER_API_VERSION: "1.42"
     depends_on:
       postgres:
         condition: service_healthy

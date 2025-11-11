@@ -1,0 +1,19 @@
+{
+  "title": "Aprobado o Desaprobado",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-condicionales",
+  "difficulty": "easy",
+  "tags": [
+    "condicionales",
+    "if-else",
+    "evaluacion"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Necesitas leer una nota con float(input()) y compararla con 6. Recuerda que 6 está incluido en aprobado (usa >= 6, no > 6).",
+    "Usa la comparación >= 6 para verificar si aprobó. La condición debe ser 'nota >= 6'. Los tests incluyen decimales como 6.5 y 5.9.",
+    "La salida debe ser exactamente 'Aprobado' o 'Desaprobado' (con mayúscula inicial). Usa if-else para cubrir ambos casos.",
+    "Solución completa: nota=float(input()), if nota >= 6: print('Aprobado') else: print('Desaprobado'). Sin texto adicional."
+  ]
+}

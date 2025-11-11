@@ -1,0 +1,18 @@
+{
+  "title": "Cálculo de IMC",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-secuenciales",
+  "difficulty": "easy",
+  "tags": [
+    "secuencial",
+    "basico"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Lee altura y peso con float(input()) para manejar decimales.",
+    "Calcula el IMC con la fórmula: imc = peso / (altura ** 2)",
+    "Muestra el resultado con 2 decimales usando: print(f'{imc:.2f}')",
+    "Solución: altura = float(input()); peso = float(input()); imc = peso / altura ** 2; print(f'{imc:.2f}')"
+  ]
+}

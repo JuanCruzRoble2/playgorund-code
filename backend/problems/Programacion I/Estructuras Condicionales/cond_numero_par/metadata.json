@@ -1,0 +1,19 @@
+{
+  "title": "Verificar número par",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-condicionales",
+  "difficulty": "easy",
+  "tags": [
+    "condicionales",
+    "modulo",
+    "operadores"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Necesitas verificar si un número es par usando el operador módulo %. Un número es par si numero % 2 == 0. Funciona con negativos y cero.",
+    "El operador % devuelve el resto de la división. 4 % 2 = 0 (par), 7 % 2 = 1 (impar). Cero es par (0 % 2 = 0). Los negativos pares también dan resto 0.",
+    "Usa if numero % 2 == 0 para detectar pares. Los tests verifican números positivos, negativos, y cero.",
+    "Salida exacta: 'Ha ingresado un número par' (si par) o 'Por favor, ingrese un número par' (si impar). Respeta acentos en 'número'."
+  ]
+}

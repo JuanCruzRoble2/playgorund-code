@@ -1,0 +1,19 @@
+{
+  "title": "Mayor de edad",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-condicionales",
+  "difficulty": "easy",
+  "tags": [
+    "condicionales",
+    "if",
+    "basico"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Lee la edad con int(input()). CUIDADO: la condición es 'edad > 18', NO 'edad >= 18'. Una persona de 18 años NO es mayor de edad según este problema.",
+    "Usa if edad > 18 para verificar. Si la edad es exactamente 18, debe ir al caso 'Es menor de edad'. Los tests verifican este límite.",
+    "El mensaje para el caso false es 'Es menor de edad', NO 'No es mayor de edad'. Presta atención a la redacción exacta que piden los tests.",
+    "Solución: edad=int(input()), if edad > 18: print('Es mayor de edad') else: print('Es menor de edad'). Respeta mayúsculas."
+  ]
+}

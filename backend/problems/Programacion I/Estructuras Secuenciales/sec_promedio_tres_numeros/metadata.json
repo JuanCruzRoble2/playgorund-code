@@ -1,0 +1,18 @@
+{
+  "title": "Promedio de Tres Números",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-secuenciales",
+  "difficulty": "easy",
+  "tags": [
+    "secuencial",
+    "basico"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Lee los tres números con float(input()) para manejar decimales.",
+    "Calcula el promedio sumando los tres y dividiendo entre 3: promedio = (num1 + num2 + num3) / 3",
+    "Imprime el resultado con print(promedio)",
+    "Solución: num1 = float(input()); num2 = float(input()); num3 = float(input()); promedio = (num1 + num2 + num3) / 3; print(promedio)"
+  ]
+}

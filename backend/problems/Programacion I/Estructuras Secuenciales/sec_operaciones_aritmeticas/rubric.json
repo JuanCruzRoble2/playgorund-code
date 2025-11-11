@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "test_existe_funcion",
+      "points": 1,
+      "visibility": "public"
+    },
+    {
+      "name": "test_10_y_2",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_15_y_3",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_20_y_4",
+      "points": 2,
+      "visibility": "hidden"
+    },
+    {
+      "name": "test_7_y_2",
+      "points": 1,
+      "visibility": "hidden"
+    }
+  ],
+  "max_points": 10
+}

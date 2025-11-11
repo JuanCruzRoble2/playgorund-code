@@ -1,0 +1,20 @@
+{
+  "title": "Clasificación de terremoto",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-condicionales",
+  "difficulty": "hard",
+  "tags": [
+    "condicionales",
+    "elif",
+    "multiples-rangos",
+    "escala-richter"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Necesitas 6 categorías con if-elif-elif-elif-elif-else. Lee magnitud con float(input()). Los tests verifican límites en 3.0, 6.0, 7.0.",
+    "Evalúa en orden ascendente: if magnitud < 3, elif magnitud < 4, elif < 5, elif < 6, elif < 7, else (>=7). Cada elif asume que las anteriores fueron falsas.",
+    "CUIDADO con mayúsculas: 'Muy leve' (l minúscula) pero 'Muy Fuerte' (F mayúscula). Respeta exactamente cada string según la tabla.",
+    "Solución: magnitud=float(input()), luego cascada de elif. Los límites son < 3, < 4, < 5, < 6, < 7, resto Extremo."
+  ]
+}

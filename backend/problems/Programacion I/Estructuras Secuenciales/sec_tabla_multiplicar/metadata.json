@@ -1,0 +1,18 @@
+{
+  "title": "Tabla de Multiplicar",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-secuenciales",
+  "difficulty": "easy",
+  "tags": [
+    "secuencial",
+    "basico"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Lee el número con int(input()) y calcula cada multiplicación por separado (sin bucles).",
+    "Calcula resultado1 = numero * 1, resultado2 = numero * 2, ..., resultado10 = numero * 10",
+    "Imprime cada resultado con el formato: f'{numero} x {multiplicador} = {resultado}'",
+    "Necesitarás 10 líneas de print(), una para cada multiplicación del 1 al 10."
+  ]
+}

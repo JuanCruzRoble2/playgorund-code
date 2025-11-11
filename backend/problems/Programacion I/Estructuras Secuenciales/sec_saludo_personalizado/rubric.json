@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "test_existe_funcion",
+      "points": 1,
+      "visibility": "public"
+    },
+    {
+      "name": "test_saludo_juan",
+      "points": 2,
+      "visibility": "public"
+    },
+    {
+      "name": "test_saludo_maria",
+      "points": 2,
+      "visibility": "public"
+    },
+    {
+      "name": "test_saludo_nombre_largo",
+      "points": 2,
+      "visibility": "hidden"
+    },
+    {
+      "name": "test_formato_exacto",
+      "points": 3,
+      "visibility": "hidden"
+    }
+  ],
+  "max_points": 10
+}

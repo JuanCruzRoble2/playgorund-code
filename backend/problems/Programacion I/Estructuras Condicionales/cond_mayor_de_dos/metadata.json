@@ -1,0 +1,18 @@
+{
+  "title": "Mayor de dos numeros",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-condicionales",
+  "difficulty": "easy",
+  "tags": [
+    "basico",
+    "practica"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Lee dos números con float(input()), uno por línea. Usa float() para soportar decimales y negativos que aparecen en los tests.",
+    "Compara los números con > o >= para determinar el mayor. Si son iguales (a == b), imprime cualquiera de los dos.",
+    "Usa if-else simple: if a > b: print(a) else: print(b). Esto cubre también el caso a == b automáticamente.",
+    "Solución completa: a=float(input()), b=float(input()), luego if a > b: print(a) else: print(b). Sin texto adicional."
+  ]
+}

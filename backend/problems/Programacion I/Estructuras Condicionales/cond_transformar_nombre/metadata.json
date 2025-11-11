@@ -1,0 +1,19 @@
+{
+  "title": "Transformar nombre",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-condicionales",
+  "difficulty": "medium",
+  "tags": [
+    "condicionales",
+    "strings",
+    "metodos-string"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Lee dos líneas: nombre=input(), opcion=int(input()). Luego aplica transformación según opción 1, 2 o 3. Los tests verifican nombres con múltiples palabras.",
+    "Usa métodos de string: opcion 1 → nombre.upper(), opcion 2 → nombre.lower(), opcion 3 → nombre.title(). Cada método transforma todo el string.",
+    ".title() capitaliza la primera letra de CADA palabra (ej: 'jose garcia' → 'Jose Garcia'). .upper() pone todo en mayúscula, .lower() todo en minúscula.",
+    "Usa if-elif-elif-else. Para opciones inválidas (0, -1, 5, etc.), imprime exactamente 'Opción inválida' (con tilde en 'Opción')."
+  ]
+}

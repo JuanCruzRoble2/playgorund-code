@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "test_existe_funcion",
+      "points": 1,
+      "visibility": "public"
+    },
+    {
+      "name": "test_presentacion_basica",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_presentacion_otra",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_formato_exacto",
+      "points": 2,
+      "visibility": "hidden"
+    },
+    {
+      "name": "test_con_tildes",
+      "points": 1,
+      "visibility": "hidden"
+    }
+  ],
+  "max_points": 10
+}

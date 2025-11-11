@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "test_existe_funcion",
+      "points": 1,
+      "visibility": "public"
+    },
+    {
+      "name": "test_imc_normal",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_imc_bajo",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_imc_alto",
+      "points": 2,
+      "visibility": "hidden"
+    },
+    {
+      "name": "test_formato_decimales",
+      "points": 1,
+      "visibility": "hidden"
+    }
+  ],
+  "max_points": 10
+}

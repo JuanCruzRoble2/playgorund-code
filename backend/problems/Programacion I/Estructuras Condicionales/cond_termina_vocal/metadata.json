@@ -1,0 +1,19 @@
+{
+  "title": "String termina en vocal",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-condicionales",
+  "difficulty": "medium",
+  "tags": [
+    "condicionales",
+    "strings",
+    "indexacion"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Necesitas obtener el último carácter del string con texto[-1]. El índice -1 accede al último elemento. Los tests incluyen mayúsculas y minúsculas.",
+    "Verifica si el último carácter es vocal con: if texto[-1] in 'aeiouAEIOU'. Esto revisa tanto mayúsculas como minúsculas en una sola comparación.",
+    "Si es vocal, concatena '!' al final con texto + '!'. Si no es vocal, imprime el texto original sin cambios. Sin espacio antes del '!'.",
+    "Solución: texto=input(), if texto[-1] in 'aeiouAEIOU': print(texto+'!') else: print(texto). Sin espacio antes de '!'."
+  ]
+}

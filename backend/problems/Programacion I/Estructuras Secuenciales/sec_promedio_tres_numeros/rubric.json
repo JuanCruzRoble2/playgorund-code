@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "test_existe_funcion",
+      "points": 1,
+      "visibility": "public"
+    },
+    {
+      "name": "test_promedio_10_20_30",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_promedio_5_10_15",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_promedio_decimales",
+      "points": 2,
+      "visibility": "hidden"
+    },
+    {
+      "name": "test_promedio_iguales",
+      "points": 1,
+      "visibility": "hidden"
+    }
+  ],
+  "max_points": 10
+}

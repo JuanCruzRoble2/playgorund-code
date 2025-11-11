@@ -1,0 +1,19 @@
+{
+  "title": "Hola Mundo",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-secuenciales",
+  "difficulty": "easy",
+  "tags": [
+    "secuencial",
+    "print",
+    "basico"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Debes usar la función print() para mostrar el mensaje en pantalla.",
+    "El mensaje debe ser exactamente 'Hola Mundo!' con H mayúscula y signo de exclamación al final.",
+    "Usa print('Hola Mundo!') dentro de la función main().",
+    "Solución completa: def main(): print('Hola Mundo!'). No necesitas leer nada con input()."
+  ]
+}

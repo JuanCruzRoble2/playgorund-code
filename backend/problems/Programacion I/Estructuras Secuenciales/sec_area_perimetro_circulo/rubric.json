@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "test_existe_funcion",
+      "points": 1,
+      "visibility": "public"
+    },
+    {
+      "name": "test_radio_5",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_radio_10",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_radio_decimal",
+      "points": 2,
+      "visibility": "hidden"
+    },
+    {
+      "name": "test_radio_1",
+      "points": 1,
+      "visibility": "hidden"
+    }
+  ],
+  "max_points": 10
+}

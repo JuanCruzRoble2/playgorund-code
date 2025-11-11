@@ -1,0 +1,18 @@
+{
+  "title": "Conversión Celsius a Fahrenheit",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-secuenciales",
+  "difficulty": "easy",
+  "tags": [
+    "secuencial",
+    "basico"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Lee la temperatura en Celsius con float(input()).",
+    "Aplica la fórmula de conversión: fahrenheit = (9/5) * celsius + 32",
+    "Imprime solo el resultado numérico con print(fahrenheit)",
+    "Solución: celsius = float(input()); fahrenheit = (9/5) * celsius + 32; print(fahrenheit)"
+  ]
+}

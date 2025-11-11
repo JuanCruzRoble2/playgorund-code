@@ -1,0 +1,30 @@
+{
+  "tests": [
+    {
+      "name": "test_existe_funcion",
+      "points": 1,
+      "visibility": "public"
+    },
+    {
+      "name": "test_tabla_5",
+      "points": 4,
+      "visibility": "public"
+    },
+    {
+      "name": "test_tabla_3",
+      "points": 3,
+      "visibility": "public"
+    },
+    {
+      "name": "test_tabla_7",
+      "points": 1,
+      "visibility": "hidden"
+    },
+    {
+      "name": "test_formato_exacto",
+      "points": 1,
+      "visibility": "hidden"
+    }
+  ],
+  "max_points": 10
+}

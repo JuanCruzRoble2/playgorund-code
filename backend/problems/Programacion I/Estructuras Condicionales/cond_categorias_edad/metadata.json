@@ -1,0 +1,19 @@
+{
+  "title": "Categorías de edad",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-condicionales",
+  "difficulty": "medium",
+  "tags": [
+    "condicionales",
+    "elif",
+    "multiples-condiciones"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Necesitas crear una función categoria_edad(edad) que retorne una de 4 categorías según la edad. Usa if-elif-elif-else para evaluar 4 rangos diferentes.",
+    "Usa comparaciones en orden: if edad < 12 (Niño/a), elif edad < 18 (Adolescente), elif edad < 30 (Adulto/a joven), else (Adulto/a). Cada elif ya sabe que las condiciones anteriores fueron falsas.",
+    "Los límites son: edad < 12, edad < 18, edad < 30, resto. Presta atención a los valores exactos: 12 es Adolescente, 18 es Adulto/a joven, 30 es Adulto/a.",
+    "Retorna strings exactos: 'Niño/a', 'Adolescente', 'Adulto/a joven', 'Adulto/a'. Respeta mayúsculas, tildes y la barra /. Usa return, NO print()."
+  ]
+}

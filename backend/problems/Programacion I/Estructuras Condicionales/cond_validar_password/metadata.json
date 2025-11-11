@@ -1,0 +1,19 @@
+{
+  "title": "Validar contraseña",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-condicionales",
+  "difficulty": "easy",
+  "tags": [
+    "condicionales",
+    "strings",
+    "len"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Usa len(password) para obtener la longitud del string. La contraseña debe tener entre 8 y 14 caracteres (inclusivo). Los tests verifican strings vacíos y límites exactos.",
+    "Verifica el rango con: if 8 <= len(password) <= 14. Python permite comparaciones encadenadas. También funciona: len(password) >= 8 and len(password) <= 14.",
+    "Los límites 8 y 14 SÍ son válidos (inclusivos). Una contraseña de exactamente 8 o 14 caracteres está bien. Los tests verifican 7 (inválido) y 8 (válido).",
+    "Salida exacta: 'Ha ingresado una contraseña correcta' (si válida) o 'Por favor, ingrese una contraseña de entre 8 y 14 caracteres' (si no). Incluye tildes."
+  ]
+}

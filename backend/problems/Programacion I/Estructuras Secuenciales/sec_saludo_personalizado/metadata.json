@@ -1,0 +1,18 @@
+{
+  "title": "Saludo Personalizado",
+  "subject_id": "programacion-1",
+  "unit_id": "estructuras-secuenciales",
+  "difficulty": "easy",
+  "tags": [
+    "secuencial",
+    "basico"
+  ],
+  "timeout_sec": 3.0,
+  "memory_mb": 128,
+  "hints": [
+    "Necesitas leer el nombre con input() y guardarlo en una variable.",
+    "Usa un f-string para formatear el saludo: f'Hola {nombre}!'",
+    "El formato debe ser exactamente 'Hola {nombre}!' con H mayúscula y signo de exclamación.",
+    "Solución completa: nombre = input(); print(f'Hola {nombre}!')"
+  ]
+}

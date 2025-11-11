@@ -176,6 +176,15 @@ def pytest_sessionfinish(session, exitstatus):
             (workspace_path / "conftest.py").write_text(conftest_content, encoding="utf-8")
             os.chmod(workspace_path / "conftest.py", 0o666)
 
+            # Create pytest.ini to configure test file patterns
+            pytest_ini_content = '''[pytest]
+python_files = tests_*.py test_*.py *_test.py
+python_classes = Test*
+python_functions = test_*
+'''
+            (workspace_path / "pytest.ini").write_text(pytest_ini_content, encoding="utf-8")
+            os.chmod(workspace_path / "pytest.ini", 0o666)
+
             # Log workspace contents before execution
             workspace_files = [f.name for f in workspace_path.iterdir()]
             print(f"[WORKER DEBUG] Workspace files: {workspace_files}")  # Print to stdout for RQ logs
